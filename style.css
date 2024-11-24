@@ -1,0 +1,418 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, #1e293b5c, #0d1117d1);
+    overflow: hidden;
+}
+
+/* Moon */
+.moon {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate(-50%, -50%); /* Geser ke tengah */
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #f9d71c, #e0c200);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(249, 215, 28, 0.5);
+    animation: sink 10s infinite alternate ease-in-out;
+}
+
+/* Stars */
+.star {
+    position: absolute;
+    background: radial-gradient(circle, #ffffff, transparent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+.star:nth-child(1) { top: 50px; left: 30%; width: 5px; height: 5px; }
+.star:nth-child(2) { top: 100px; left: 60%; width: 7px; height: 7px; }
+.star:nth-child(3) { top: 20px; left: 80%; width: 4px; height: 4px; }
+.star:nth-child(4) { top: 150px; left: 40%; width: 6px; height: 6px; }
+.star:nth-child(5) { top: 80px; left: 20%; width: 5px; height: 5px; }
+
+/* Clouds */
+.cloud {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: sink 12s infinite alternate ease-in-out;
+}
+
+.cloud:nth-child(1) {
+    width: 120px;
+    height: 60px;
+    left: 20%;
+    box-shadow: 0 -30px 0 -10px rgba(255, 255, 255, 0.8),
+                30px -10px 0 -10px rgba(255, 255, 255, 0.8),
+                -30px -10px 0 -10px rgba(255, 255, 255, 0.8);
+}
+
+.cloud:nth-child(2) {
+    width: 150px;
+    height: 70px;
+    left: 60%;
+    box-shadow: 0 -35px 0 -10px rgba(255, 255, 255, 0.8),
+                40px -15px 0 -10px rgba(255, 255, 255, 0.8),
+                -40px -15px 0 -10px rgba(255, 255, 255, 0.8);
+}
+
+.cloud:nth-child(3) {
+    width: 100px;
+    height: 50px;
+    left: 80%;
+    box-shadow: 0 -25px 0 -8px rgba(255, 255, 255, 0.8),
+                25px -10px 0 -8px rgba(255, 255, 255, 0.8),
+                -25px -10px 0 -8px rgba(255, 255, 255, 0.8);
+}
+
+/* Animations */
+@keyframes sink {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(30px); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 0 1rem;
+    align-items: center; 
+    color: white;  
+    background-color: rgba(35, 46, 121, 0.588);
+    display: flex;
+    justify-content: space-between;
+    z-index: 11;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: white;
+}
+
+nav ul li a {
+    background-color: #123c5c;
+    color: #777;
+    text-decoration: none;
+    font-size: 14px; /* Mengecilkan ukuran font */
+    padding: 1rem 2rem; /* Mengecilkan padding */
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nav ul li a:hover {
+    transform: scale(1.1);
+    color: #333;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.kalkulator {
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+}
+
+header h1 .welcome {
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    justify-content: center;
+    font-weight: normal;
+    display: block;
+    margin-top: 120px;
+    margin-bottom: 10px; /* Memberikan jarak antara "Selamat" dan "DATANG" */
+    color:#ffffff;
+    z-index: 10;
+    padding: 40px 20 px;
+}
+
+/* Bagian konten utama */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.content p {
+    font-size: 16px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+    position: relative;
+    background: linear-gradient(to top, #1e293b, #0d1117);
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Mountain Layers */
+.mountain {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: #2d3748;
+    clip-path: polygon(0% 50%, 20% 30%, 40% 50%, 60% 20%, 80% 40%, 100% 30%, 100% 100%, 0% 100%);
+    z-index: 1;
+}
+
+.mountain-layer2 {
+    background: #1a202c;
+    clip-path: polygon(0% 60%, 25% 40%, 50% 60%, 75% 30%, 100% 50%, 100% 100%, 0% 100%);
+    z-index: 2;
+}
+
+.mountain-layer3 {
+    background: #111827;
+    clip-path: polygon(0% 70%, 30% 50%, 60% 70%, 85% 40%, 100% 60%, 100% 100%, 0% 100%);
+    z-index: 3;
+}
+
+/* Footer Content */
+footer a {
+    color: #63b3ed;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #90cdf4;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #0a0f33;
+    color: white;
+    margin-top: 20px;
+}
+footer p {
+    margin: 0;
+    font-size: 0.8rem;
+    z-index: 6;
+}
+.members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.member {
+    background-color:  #123c5c;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.member h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #b7c2c9;
+}
+.member p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #b7c2c9;
+}
+.members {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Content Styles */
+header {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    
+}
+
+header h1 .welcome {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #f9fafb;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+nav ul li a {
+    color: #f9fafb;
+    text-decoration: none;
+    margin: 0 2rem;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+}
+
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.maincontainer{
+    margin-top: 150px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: none;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  
+}
+  
+  /* THE CARD HOLDS THE FRONT AND BACK FACES */
+.thecard{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+  
+  /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.thecard:hover{
+    transform: rotateY(180deg);
+}
+  
+  /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+.thefront{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #123c5c;
+    color: #ffffff;
+}
+  
+  /* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+  .theback{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #123c5c;
+    color: #ffffff;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+  
+  /*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.thefront h1, .theback h1{
+    font-family: 'zilla slab', sans-serif;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+  
+.thefront p, .theback p{
+    font-family: 'zilla slab', sans-serif;
+    padding: 30px;
+    font-weight: normal;
+    font-size: 12px;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+.btn:hover {
+    background-color: #ffffff;
+}
+
+#input {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#output {
+    text-align: center;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Turunan</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/mathjs@13.2.2/lib/browser/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header>
+    <!--Navbar-->
+    <nav>
+      <div><class="kalkulator">Kalkulator Turunan</div>
+      <ul>
+        <li>
+          <a href="about.html" class="about"><i class="fas fa-info-circle"></i>  Tentang</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Moon -->
+    <div class="moon"></div>
+    
+    <!-- Stars -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+    <!-- Clouds -->
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    
+    <h1><span class="welcome">Selamat Datang!</span></h1>
+  </header>
+    <div class="container">
+        <div class="member">
+            <h3>Turunan atau Diferensial</h2>
+            <p>Turunan didefinisikan sebagai suatu perhitungan terhadap perubahan nilai fungsi karena perubahan pada variabelnya. Turunan disebut juga dengan diferensial. Proses dalam menentukan turunan suatu fungsi disebut sebagai diferensiasi. Rumus turunan secara umum f(x) = ax^n → f’(x) = n.ax^n-1.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+    <div id="input">
+      <div class="maincontainer">
+        <div class="thecard">
+          
+          <div class="thefront">
+            <h1>Kalkulator</h1>
+            <p>Mulai Sekarang!</p>
+          </div>
+            
+          <div class="theback">
+            <h3><label for="persamaan">f(x) = </label></h3>
+            <h3><input type="text" id="persamaan" placeholder="Masukkan persamaan..."/></h3>
+            <button onclick="hitungTurunan()">Turunkan</button>
+            <button onclick="reset()">Reset</button>
+            <div id="output">
+            <h3><p class="#b7c2c9">Hasil: f'(x) = <span id="hasil" class="font-semibold #b7c2c9"></span></p></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+    <footer>
+      <!-- Mountain Layers -->
+      <div class="mountain mountain-layer1"></div>
+      <div class="mountain mountain-layer2"></div>
+      <div class="mountain mountain-layer3"></div>
+      <p>&copy; 2024 Kalkulator Turunan | Dibuat dengan ❤ oleh Tim Kami</p>
+    </footer>
+</html>
