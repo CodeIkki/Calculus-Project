@@ -329,15 +329,15 @@ label {
 }
   
   /* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-.maincontainer:hover .thecard{
-    transform: rotateY(2deg); 
-}
-  
 input {
     display: none;
 }
 
-.maincontainer:checked + .thecard {
+.maincontainer:hover .thecard{
+    transform: rotateY(2deg); 
+}
+
+.maincontainer :checked + .thecard {
     transform: rotateY(180deg);
 }
 
