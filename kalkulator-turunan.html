@@ -10,6 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/mathjs@13.2.2/lib/browser/math.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+      .star {
+          position: absolute;
+          border-radius: 50%;
+          background-color: white; /* Warna bintang */
+          opacity: 0.8;
+          animation: twinkle 1.5s infinite; /* Animasi berkedip */
+      }
+
+      @keyframes twinkle {
+          5%, 100% {
+              opacity: 0.6;
+          }
+          50% {
+              opacity: 0,8;
+          }
+      }
+  </style>
 </head>
 <body>
   <header>
@@ -42,7 +60,7 @@
   </header>
     <div class="container">
         <div class="member">
-            <h3>Turunan atau Diferensial</h2>
+            <h3>Turunan atau Diferensial</h3>
             <p>Turunan didefinisikan sebagai suatu perhitungan terhadap perubahan nilai fungsi karena perubahan pada variabelnya. Turunan disebut juga dengan diferensial. Proses dalam menentukan turunan suatu fungsi disebut sebagai diferensiasi. Rumus turunan secara umum f(x) = ax^n → f’(x) = n.ax^n-1.</p>
             </div>
         </div>
@@ -54,27 +72,34 @@
     <div class="star"></div>
     <div class="star"></div>
 
-    <div id="input">
-      <div class="maincontainer">
+    <div class="maincontainer">
+      <label>
+        <input type="checkbox"/>
         <div class="thecard">
-          
           <div class="thefront">
-            <h1>Kalkulator</h1>
-            <p>Mulai Sekarang!</p>
+            <h3>Kalkulator ini dapat menghitung turunan suatu fungsi hingga turunan ketiga dengan mudah dan akurat.</h3>
+            <p>Klik untuk memulai</p>
           </div>
             
           <div class="theback">
-            <h3><label for="persamaan">f(x) = </label></h3>
-            <h3><input type="text" id="persamaan" placeholder="Masukkan persamaan..."/></h3>
-            <button onclick="hitungTurunan()">Turunkan</button>
+            <h1>Kalkulator</h1>
+            <label for="persamaan">f(x) = </label>
+            <input type="text" id="persamaan" placeholder="Masukkan persamaan..."/>
+            <br/>
+            <button id="turunkan" onclick="hitungTurunan()">Turunkan</button>
+            <button id="lanjutkan" onclick="turunanLanjutan()">Turunkan lagi</button>
             <button onclick="reset()">Reset</button>
             <div id="output">
-            <h3><p class="#b7c2c9">Hasil: f'(x) = <span id="hasil" class="font-semibold #b7c2c9"></span></p></h3>
+              <h3>Hasil:</h3>
+              <ul id="hasil"></ul>
+              <p id="sudah"></p>
+            </div>
+            <p class="click">Kembali</p>
           </div>
         </div>
-      </div>
+     </label>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+
     <footer>
       <!-- Mountain Layers -->
       <div class="mountain mountain-layer1"></div>
@@ -82,4 +107,25 @@
       <div class="mountain mountain-layer3"></div>
       <p>&copy; 2024 Kalkulator Turunan | Dibuat dengan ❤ oleh Tim Kami</p>
     </footer>
+    
+    <script type="text/javascript" src="script.js"></script>
+    <script>    
+      // Fungsi untuk membuat bintang
+      function createStars(numStars) {
+          const body = document.body;
+          for (let i = 0; i < numStars; i++) {
+              const star = document.createElement('div');
+              star.className = 'star';
+              const size = Math.random() * 3 + 1; // Ukuran bintang antara 1px dan 4px
+              star.style.width = `${size}px`;
+              star.style.height = `${size}px`;
+              star.style.top = `${Math.random() * 145}vh`; // Posisi vertikal acak
+              star.style.left = `${Math.random() * 100}vw`; // Posisi horizontal acak
+              body.appendChild(star);
+          }
+      }
+
+      // Panggil fungsi untuk membuat bintang
+      createStars(100); // Ganti angka ini untuk menambah atau mengurangi jumlah bintang
+  </script>
 </html>
