@@ -8,6 +8,24 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white; /* Warna bintang */
+            opacity: 0.8;
+            animation: twinkle 1.5s infinite; /* Animasi berkedip */
+        }
+  
+        @keyframes twinkle {
+            5%, 100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0,8;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -78,5 +96,24 @@
     <div class="mountain mountain-layer3"></div>
         <p>&copy; 2024 Kalkulator Turunan | Dibuat dengan ❤ oleh Tim Kami</p>
     </footer>
+    <script>    
+        // Fungsi untuk membuat bintang
+        function createStars(numStars) {
+            const body = document.body;
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1; // Ukuran bintang antara 1px dan 4px
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${Math.random() * 100}vh`; // Posisi vertikal acak
+                star.style.left = `${Math.random() * 100}vw`; // Posisi horizontal acak
+                body.appendChild(star);
+            }
+        }
+  
+        // Panggil fungsi untuk membuat bintang
+        createStars(100); // Ganti angka ini untuk menambah atau mengurangi jumlah bintang
+    </script>
 </body>
 </html>
