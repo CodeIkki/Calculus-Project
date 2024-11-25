@@ -337,7 +337,7 @@ input {
     display: none;
 }
 
-.maincontainer:hover :checked + .thecard {
+.maincontainer:checked + .thecard {
     transform: rotateY(180deg);
 }
 
